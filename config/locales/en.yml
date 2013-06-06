@@ -4,11 +4,11 @@
 en:
   address_book:
     other_address: "Other address"
-    add_new_shipping_address: "Add new shipping address"
+    add_new_shipping_address: "Add New Address"
     new_shipping_address: "New Shipping Address"
     edit_shipping_address: "Edit Shipping Address"
     no_shipping_addresses_on_file: "No shipping addresses on file"
-    shipping_addresses: "Shipping Addresses"
+    shipping_addresses: "My Shipping Addresses"
     successfully_saved: "Saved successfully"
     unsuccessfully_saved: "There was an error while trying to save your address."
     successfully_updated: "Updated successfully"
