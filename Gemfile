@@ -15,4 +15,4 @@ end
 gem 'devise'
 gem 'devise-encryptable'
 gem 'spree_auth_devise', :git => 'git://github.com/spree/spree_auth_devise'
-gem 'spree', '~> 1.2.1'
+gem 'spree', '~> 2.0.0'
