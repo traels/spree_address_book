@@ -4,11 +4,11 @@ class Spree::AddressesController < Spree::StoreController
   load_and_authorize_resource :class => Spree::Address
 
   def index
-    redirect_to account_path
+    redirect_to spree.account_path
   end
-  
+
   def show
-    redirect_to account_path
+    redirect_to spree.account_path
   end
 
   def edit
@@ -22,8 +22,8 @@ class Spree::AddressesController < Spree::StoreController
   def update
     if @address.editable?
       if @address.update_attributes(params[:address])
-        flash[:notice] = I18n.t(:successfully_updated, :resource => I18n.t(:address))
-        redirect_back_or_default(account_path)
+        flash[:notice] = I18n.t(:successfully_updated, resource: I18n.t(:address), scope: :address_book)
+        redirect_back_or_default(spree.account_path)
       else
         render :action => "edit"
       end
@@ -32,8 +32,8 @@ class Spree::AddressesController < Spree::StoreController
       new_address.attributes = params[:address]
       @address.update_attribute(:deleted_at, Time.now)
       if new_address.save
-        flash[:notice] = I18n.t(:successfully_updated, :resource => I18n.t(:address))
-        redirect_back_or_default(account_path)
+        flash[:notice] = I18n.t(:successfully_updated, resource: I18n.t(:address), scope: :address_book)
+        redirect_back_or_default(spree.account_path)
       else
         render :action => "edit"
       end
@@ -44,8 +44,8 @@ class Spree::AddressesController < Spree::StoreController
     @address = Spree::Address.new(params[:address])
     @address.user = spree_current_user
     if @address.save
-      flash[:notice] = I18n.t(:successfully_created, :resource => I18n.t(:address))
-      redirect_to account_path
+      flash[:notice] = I18n.t(:successfully_created, resource: I18n.t(:address), scope: :address_book)
+      redirect_to spree.account_path
     else
       render :action => "new"
     end
@@ -54,7 +54,7 @@ class Spree::AddressesController < Spree::StoreController
   def destroy
     @address.destroy
 
-    flash[:notice] = I18n.t(:successfully_removed, :resource => t(:address))
-    redirect_to(request.env['HTTP_REFERER'] || account_path) unless request.xhr?
+    flash[:notice] = I18n.t(:successfully_removed, resource: t(:address), scope: :address_book)
+    redirect_to(request.env['HTTP_REFERER'] || spree.account_path) unless request.xhr?
   end
 end
