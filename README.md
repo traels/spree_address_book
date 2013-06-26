@@ -3,6 +3,8 @@ SpreeAddressBook
 
 Introduction goes here.
 
+Fork to Spree 2.0
+
 Installation
 ------------
 
