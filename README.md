@@ -1,4 +1,4 @@
-SpreeAddressBook
+SpreeAddressBook for Spree 2.0
 ================
 
 Introduction goes here.
