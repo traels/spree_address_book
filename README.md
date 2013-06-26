@@ -1,15 +1,40 @@
 SpreeAddressBook
 ================
 
-This extension allows users select `bill_address` and `ship_address` from addresses, which was already entered by current user.
-
+Introduction goes here.
 
 Installation
-============
+------------
 
-      Add `gem "spree_address_book", :git => "git://github.com/romul/spree_address_book.git"
-      Run `bundle install`
-      Run `rails g spree_address_book:install`
+Add spree_address_book to your Gemfile:
 
+```ruby
+gem 'spree_address_book'
+```
 
-Copyright (c) 2011-2012 Roman Smirnov, released under the New BSD License
+Bundle your dependencies and run the installation generator:
+
+```shell
+bundle
+bundle exec rails g spree_address_book:install
+```
+
+Testing
+-------
+
+Be sure to bundle your dependencies and then create a dummy test app for the specs to run against.
+
+```shell
+bundle
+bundle exec rake test_app
+bundle exec rspec spec
+```
+
+When testing your applications integration with this extension you may use it's factories.
+Simply add this require statement to your spec_helper:
+
+```ruby
+require 'spree_address_book/factories'
+```
+
+Copyright (c) 2013 [name of extension creator], released under the New BSD License
