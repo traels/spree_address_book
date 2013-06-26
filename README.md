@@ -1,7 +1,9 @@
-SpreeAddressBook
+SpreeAddressBook for Spree 2.0
 ================
 
 Introduction goes here.
+
+Fork to Spree 2.0
 
 Installation
 ------------
