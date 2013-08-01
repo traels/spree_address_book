@@ -5,7 +5,7 @@ Bundler.setup
 require 'rspec/core/rake_task'
 RSpec::Core::RakeTask.new
 
-require 'spree/core/testing_support/common_rake'
+require 'spree/testing_support/extension_rake'
 
 task :default => [:spec]
 
