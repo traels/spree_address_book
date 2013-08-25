@@ -28,7 +28,9 @@
          ].join.gsub('"', "'").gsub("\n", "")
       %>
       <%= javascript_tag do -%>
-        $('#<%="#{address_id}state" %>').append("<%== state_elements %>");
+        window.onload = function() {
+          $('#<%="#{address_id}state" %>').append("<%== state_elements %>");
+        }
       <% end %>
     </p>
       <noscript>
