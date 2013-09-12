@@ -2,7 +2,8 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  address_book:
+ spree:
+   address_book:
     other_address: "Other address"
     add_new_shipping_address: "Add new shipping address"
     new_shipping_address: "New Shipping Address"
@@ -14,3 +15,4 @@ en:
     successfully_updated: "Updated successfully"
     unsuccessfully_updated: "There was an update while trying to update your address."
     save: "Save"
+    address: "Address"

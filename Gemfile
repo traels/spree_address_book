@@ -1,5 +1,6 @@
-source "http://rubygems.org"
+source 'https://rubygems.org'
 gemspec
+
 
 group :test do
   gem 'sass-rails',   '~> 3.2.5'
@@ -13,6 +14,8 @@ group :test do
 end
 
 gem 'devise'
+# gem 'spree_auth_devise',      github: 'spree/spree_auth_devise',      branch: '2-0-stable'
 gem 'devise-encryptable'
-gem 'spree_auth_devise', :git => 'git://github.com/spree/spree_auth_devise'
-gem 'spree', '~> 1.2.1'
+
+gem 'spree',                  github: 'spree/spree',                  branch: '2-0-stable'
+# gem 'spree_i18n', :git => 'git://github.com/spree/spree_i18n.git', branch: '2-0-stable'

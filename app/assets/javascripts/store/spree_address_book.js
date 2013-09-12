@@ -1,9 +1,9 @@
-//= require store/spree_core
+//= require store/spree_frontend
 
 (function($) {
   $(document).ready(function(){
     if ($(".select_address").length) {
-      $('input#order_use_billing').unbind("click");
+      $('input#order_use_billing').unbind("change");
       $(".inner").hide();
       $(".inner input").prop("disabled", true);
       $(".inner select").prop("disabled", true);
