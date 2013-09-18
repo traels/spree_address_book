@@ -1,0 +1,13 @@
+tr:
+  address_book:
+    other_address: "Öteki adres"
+    add_new_shipping_address: "Yeni teslim adresi ekle"
+    new_shipping_address: "Yeni Teslim Adresi"
+    edit_shipping_address: "Teslim Adresini Düzenle"
+    no_shipping_addresses_on_file: "Dosyada teslim adresi yok"
+    shipping_addresses: "Teslim Adresleri"
+    successfully_saved: "Başarıyla kaydedildi"
+    unsuccessfully_saved: "Adresinizi kaydederken bir hatayla karşılaşıldı."
+    successfully_updated: "Başarıyla güncellendi"
+    unsuccessfully_updated: "Adresinizi güncellerken bir hatayla karşılaşıldı."
+    save: "Kaydet"
