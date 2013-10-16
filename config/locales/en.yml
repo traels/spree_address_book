@@ -9,7 +9,7 @@ en:
     new_shipping_address: "New Shipping Address"
     edit_shipping_address: "Edit Shipping Address"
     no_shipping_addresses_on_file: "No shipping addresses on file"
-    shipping_addresses: "Shipping Addresses"
+    shipping_addresses: "My Addresses"
     successfully_saved: "Saved successfully"
     unsuccessfully_saved: "There was an error while trying to save your address."
     successfully_updated: "Updated successfully"
