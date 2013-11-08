@@ -6,7 +6,7 @@ class Spree::AddressesController < Spree::StoreController
   def index
     redirect_to account_path
   end
-  
+
   def show
     redirect_to account_path
   end
@@ -42,7 +42,6 @@ class Spree::AddressesController < Spree::StoreController
 
   def create
     @address = Spree::Address.new(address_params)
-    debugger
     @address.user = try_spree_current_user
     if @address.save
       flash[:notice] = Spree.t(:successfully_created, :resource => Spree.t(:address, scope: "address_book"))
