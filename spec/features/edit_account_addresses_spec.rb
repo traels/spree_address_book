@@ -16,21 +16,21 @@ describe "User editing addresses for his account" do
   end
 
   it "should be able to add address" do
-    
+
   end
 
   it "should be able to edit address", :js => true do
     page.evaluate_script('window.confirm = function() { return true; }')
     within("#user_addresses > tbody > tr:first") do
-      click_link I18n.t(:edit)
+      click_link Spree.t(:edit)
     end
     current_path.should == spree.edit_address_path(address)
 
     new_street = Faker::Address.street_address
-    fill_in I18n.t('activerecord.attributes.spree/address.address1'), :with => new_street
+    fill_in Spree.t('activerecord.attributes.spree/address.address1'), :with => new_street
     click_button "Update"
     current_path.should == spree.account_path
-    page.should have_content(I18n.t('successfully_updated'))
+    page.should have_content(Spree.t('successfully_updated'))
 
     within("#user_addresses > tbody > tr:first") do
       page.should have_content(new_street)
@@ -41,7 +41,7 @@ describe "User editing addresses for his account" do
     # bypass confirm dialog
     page.evaluate_script('window.confirm = function() { return true; }')
     within("#user_addresses > tbody > tr:first") do
-      click_link I18n.t(:remove)
+      click_link Spree.t(:remove)
     end
     current_path.should == spree.account_path
 
