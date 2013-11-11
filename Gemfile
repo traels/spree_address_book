@@ -4,8 +4,8 @@ gemspec
 gem 'rails', '4.0.0'
 
 group :test do
-  gem 'sass-rails'
-  gem 'coffee-rails'
+  #gem 'sass-rails'
+  #gem 'coffee-rails'
 
   if RUBY_PLATFORM.downcase.include? "darwin"
     gem 'rb-fsevent'
