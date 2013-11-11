@@ -5,7 +5,7 @@ script: "bundle exec rake"
 branches:
   only:
     - master
-    - 2-0-stable
+    - 2-1-stable
 rvm:
   - 1.9.3
   - 2.0.0
