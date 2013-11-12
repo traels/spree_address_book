@@ -21,6 +21,9 @@ RSpec.configure do |config|
   config.use_transactional_fixtures = false
   config.include Spree::TestingSupport::UrlHelpers
 
+  config.include Devise::TestHelpers, :type => :controller
+  config.include Spree::TestingSupport::ControllerRequests, :type => :controller
+
   config.before(:each) do
     if example.metadata[:js]
       DatabaseCleaner.strategy = :truncation, {
