@@ -1,14 +1,16 @@
 Spree::CheckoutController.class_eval do
   helper Spree::AddressesHelper
 
-  after_filter :normalize_addresses, :only => :update
   before_filter :set_addresses, :only => :update
+  before_filter :add_address_ids_to_permitted_attributes, :only => :update
+
+  after_filter :normalize_addresses, :only => :update
 
   protected
 
     def set_addresses
       return unless params[:order] && params[:state] == "address"
-
+      debugger
       if params[:order][:ship_address_id].to_i > 0
         params[:order].delete(:ship_address_attributes)
         Spree::Address.find(params[:order][:ship_address_id]).user_id != spree_current_user.id && raise("Frontend address forging")
@@ -44,5 +46,11 @@ Spree::CheckoutController.class_eval do
         @order.bill_address.update_attribute(:user_id, try_spree_current_user.try(:id))
       end
       @order.ship_address.update_attribute(:user_id, try_spree_current_user.try(:id))
+    end
+
+    def add_address_ids_to_permitted_attributes
+      [:bill_address_id, :ship_address_id].each do |attrib|
+        Spree::PermittedAttributes.checkout_attributes << attrib unless Spree::PermittedAttributes.checkout_attributes.include?(attrib)
+      end
     end
 end
