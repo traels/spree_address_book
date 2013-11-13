@@ -10,7 +10,6 @@ Spree::CheckoutController.class_eval do
 
     def set_addresses
       return unless params[:order] && params[:state] == "address"
-      debugger
       if params[:order][:ship_address_id].to_i > 0
         params[:order].delete(:ship_address_attributes)
         Spree::Address.find(params[:order][:ship_address_id]).user_id != spree_current_user.id && raise("Frontend address forging")
