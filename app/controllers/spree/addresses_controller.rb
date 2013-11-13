@@ -4,7 +4,7 @@ class Spree::AddressesController < Spree::StoreController
   load_and_authorize_resource :class => Spree::Address
 
   def index
-    redirect_to account_path
+    @addresses = spree_current_user.addresses
   end
 
   def show
