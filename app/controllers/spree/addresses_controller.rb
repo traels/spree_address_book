@@ -57,6 +57,7 @@ class Spree::AddressesController < Spree::StoreController
     flash[:notice] = Spree.t(:successfully_removed, :resource => t(:address, scope: "address_book"))
     redirect_to(request.env['HTTP_REFERER'] || account_path) unless request.xhr?
   end
+
 end
 
 def address_params
