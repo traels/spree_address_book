@@ -4,6 +4,7 @@ Spree::CheckoutController.class_eval do
   before_filter :set_addresses, :only => :update
   before_filter :add_address_ids_to_permitted_attributes, :only => :update
 
+  after_filter :set_address_user_ids, :only => :update
   after_filter :normalize_addresses, :only => :update
 
   protected
@@ -41,10 +42,12 @@ Spree::CheckoutController.class_eval do
       if @order.bill_address_id != @order.ship_address_id && @order.bill_address.same_as?(@order.ship_address)
         @order.bill_address.destroy
         @order.update_attribute(:bill_address, @order.ship_address)
-      else
-        @order.bill_address.update_attribute(:user_id, try_spree_current_user.try(:id))
       end
-      @order.ship_address.update_attribute(:user_id, try_spree_current_user.try(:id))
+    end
+
+    def set_address_user_ids
+      @order.bill_address.update_attribute(:user_id, try_spree_current_user.try(:id)) if @order.bill_address_id
+      @order.ship_address.update_attribute(:user_id, try_spree_current_user.try(:id)) if @order.ship_address_id
     end
 
     def add_address_ids_to_permitted_attributes
