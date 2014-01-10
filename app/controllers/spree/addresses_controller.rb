@@ -54,7 +54,7 @@ class Spree::AddressesController < Spree::StoreController
   def destroy
     @address.destroy
 
-    flash[:notice] = Spree.t(:successfully_removed, :resource => t(:address, scope: "address_book"))
+    flash[:notice] = Spree.t(:successfully_removed, :resource => Spree.t(:address, scope: "address_book"))
     redirect_to(request.env['HTTP_REFERER'] || account_path) unless request.xhr?
   end
 
