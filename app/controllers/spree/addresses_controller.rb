@@ -61,5 +61,5 @@ class Spree::AddressesController < Spree::StoreController
 end
 
 def address_params
-  params.require(:address).permit(:firstname, :lastname, :address1, :address2, :city, :state_id, :state_name, :zipcode, :country_id, :phone)
+  params.require(:address).permit(:firstname, :lastname, :company, :address1, :address2, :city, :state_id, :state_name, :zipcode, :country_id, :phone)
 end
