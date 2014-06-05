@@ -16,13 +16,18 @@ Dir[File.join(File.dirname(__FILE__), "support/**/*.rb")].each {|f| require f }
 require 'spree/testing_support/factories'
 require 'spree/testing_support/url_helpers'
 
+require 'capybara-screenshot'
+require 'capybara-screenshot/rspec'
+require 'capybara/poltergeist'
+Capybara.javascript_driver = :poltergeist
+
 RSpec.configure do |config|
   config.mock_with :rspec
   config.use_transactional_fixtures = false
   config.include Spree::TestingSupport::UrlHelpers
 
   config.include Devise::TestHelpers, :type => :controller
-  config.include Spree::TestingSupport::ControllerRequests, :type => :controller
+#  config.include Spree::TestingSupport::ControllerRequests, :type => :controller
 
   config.before(:each) do
     if example.metadata[:js]
